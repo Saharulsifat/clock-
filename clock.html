@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="clock.css">
+</head>
+<body>
+    <div class="hero">
+        <div class="container">
+            <div class="clock">
+                <span id="hrs">00</span>
+                <span>:</span>
+                <span id="min">00</span>
+                <span>:</span>
+                <span id="sec">00</span>
+            </div>
+            <button id="dis" class="btn">click me to disply time</button>
+            
+        </div>
+    </div>
+
+
+    <script>
+        const btn = document.getElementById("dis");
+        const hrs = document.getElementById("hrs");
+        const min = document.getElementById("min");
+        const sec = document.getElementById("sec");
+        
+        btn.addEventListener('click', dis);
+        
+       
+
+        function re() {
+        // Clear all lists and dictionaries
+        hrs.innerHTML = 0;
+        min.innerHTML = 0;
+        sec.innerHTML = 0;
+        }  
+        function dis(){
+            setInterval(()=>{
+            let curentTime = new Date();
+            hrs.innerHTML=curentTime.getHours();
+            min.innerHTML =curentTime.getMinutes();
+            sec.innerHTML =curentTime.getSeconds();
+        }, 1000)
+        } 
+
+
+    </script>
+</body>
+</html>
